@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:24:46 by dajimene          #+#    #+#             */
-/*   Updated: 2022/12/30 13:36:21 by dajimene         ###   ########.fr       */
+/*   Updated: 2021/07/20 09:26:50 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1)
+		s1 = ft_strdup("");
 	if (*s1 == '\0' && *s2 == '\0')
 		return (ft_strdup(""));
 	newlen = ft_strlen(s1) + ft_strlen(s2);
@@ -35,6 +37,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (i <= newlen && s2[j] != '\0')
 		result[i++] = s2[j++];
 	result[i] = '\0';
+	free((char *)s1);
 	return (result);
 }
 /* int main()

@@ -6,13 +6,13 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:42:35 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/13 13:49:59 by dajimene         ###   ########.fr       */
+/*   Updated: 2021/07/23 02:44:49 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	free_stacks(t_stack *stack_a, t_stack *stack_b)
+void	ft_free_stacks(t_stack *stack_a, t_stack *stack_b)
 {
 	free(stack_a->stack);
 	free(stack_b->stack);
@@ -20,8 +20,18 @@ void	free_stacks(t_stack *stack_a, t_stack *stack_b)
 	free(stack_b);
 }
 
-void	error_exit(t_stack *stack)
+void	ft_error_exit(t_stack *stack, char **arr)
 {
+	int	i;
+
+	i = 0;
+
+	if (arr)
+	{
+		while (arr[i])
+			free(arr[i++]);
+		free(arr);
+	}
 	if (stack)
 	{
 		free(stack->stack);
