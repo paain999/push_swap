@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:42:35 by dajimene          #+#    #+#             */
-/*   Updated: 2021/07/23 02:44:49 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:40:15 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_error_exit(t_stack *stack, char **arr)
 	int	i;
 
 	i = 0;
-
 	if (arr)
 	{
 		while (arr[i])

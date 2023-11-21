@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:45:28 by dajimene          #+#    #+#             */
-/*   Updated: 2021/07/23 03:25:09 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:16:11 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	char	**splitted_args;
-	t_stack	*stack_b;
+	//t_stack	*stack_b;
 	int i = 0;
 
 	splitted_args = NULL;
@@ -34,5 +34,6 @@ int	main(int argc, char **argv)
 	i = 0;
 	while (i < stack_a->size)
 		printf("NUMBERS: %d\n", stack_a->stack[i++]);
+	ft_error_exit(stack_a, splitted_args);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 03:31:37 by dajimene          #+#    #+#             */
-/*   Updated: 2021/07/23 03:18:01 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:55:19 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static	char	**is_one_arg(char **av, t_stack *stack_a, int ac, char **arr)
 {
 	int	i;
 
+	i = 0;
 	if (ac == 2)
 	{
 		arr = ft_split(av[1], ' ');
@@ -49,7 +50,7 @@ char	**ft_split_args(int ac, char **av, t_stack *stack_a)
 	if (!arr)
 	{
 		i = 1;
-		arr = malloc(sizeof(char *) * ac);
+		arr = ft_calloc(ac + 1, sizeof(char *));
 		if (!arr)
 			ft_error_exit(NULL, arr);
 		while (i < ac)
