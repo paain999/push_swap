@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:42:35 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/21 19:40:15 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:42:26 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,19 @@ void	ft_free_stacks(t_stack *stack_a, t_stack *stack_b)
 	free(stack_b);
 }
 
-void	ft_error_exit(t_stack *stack, char **arr)
+void	ft_error_exit(t_stack *stack, char **splitted, int *i_arr)
 {
 	int	i;
 
 	i = 0;
-	if (arr)
+	if (splitted)
 	{
-		while (arr[i])
-			free(arr[i++]);
-		free(arr);
+		while (splitted[i])
+			free(splitted[i++]);
+		free(splitted);
 	}
+	if (i_arr)
+		free(i_arr);
 	if (stack)
 	{
 		free(stack->stack);

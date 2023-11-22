@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:57:46 by dajimene          #+#    #+#             */
-/*   Updated: 2021/07/23 03:17:56 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:09:45 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ typedef struct s_stack
 }		t_stack;
 
 void	ft_check_params(int ac, char **av);
-void	ft_error_exit(t_stack *stack, char **arr);
+void	ft_error_exit(t_stack *stack, char **splitted, int *i_arr);
 void	ft_free_stacks(t_stack *stack_a, t_stack *stack_b);
 char	**ft_split_args(int ac, char **av, t_stack *stack_a);
-int		*ft_parse_args(char **arr, int size);
+int		*ft_parse_args(char **splitted, t_stack *stack);
 
 #endif
