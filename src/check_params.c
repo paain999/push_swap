@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:44:40 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/22 10:13:19 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/24 10:35:27 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static void	ft_is_valid_arg(char *av)
 	while (av[i])
 	{
 		if (!ft_isdigit(av[i]) && !ft_sign(av[i]) && av[i] != ' ')
-			ft_error_exit(NULL, NULL, NULL);
+			exit(2);
 		else if (i != 0 && ft_sign(av[i]) && av[i - 1] != ' ')
-			ft_error_exit(NULL, NULL, NULL);
+			exit(2);
 		else if (ft_sign(av[i]) && !ft_isdigit(av[i + 1]))
-			ft_error_exit(NULL, NULL, NULL);
+			exit(2);
 		i++;
 	}
 }
@@ -56,14 +56,14 @@ void	ft_check_params(int ac, char **av)
 	while (i < ac)
 	{
 		if (av[i][0] == '\0')
-			ft_error_exit(NULL, NULL, NULL);
+			exit(2);
 		i++;
 	}
 	i = 1;
 	while (i < ac)
 	{
 		if (ft_empty_args(av[i]))
-			ft_error_exit(NULL, NULL, NULL);
+			exit(2);
 		ft_is_valid_arg(av[i]);
 		i++;
 	}

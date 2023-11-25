@@ -6,38 +6,45 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:42:35 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/22 10:42:26 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/24 22:15:58 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_free_stacks(t_stack *stack_a, t_stack *stack_b)
-{
-	free(stack_a->stack);
-	free(stack_b->stack);
-	free(stack_a);
-	free(stack_b);
-}
-
-void	ft_error_exit(t_stack *stack, char **splitted, int *i_arr)
+void	ft_free_arr(char **arr)
 {
 	int	i;
 
 	i = 0;
-	if (splitted)
+	if (arr)
 	{
-		while (splitted[i])
-			free(splitted[i++]);
-		free(splitted);
+		while (arr[i])
+			free(arr[i++]);
+		free(arr);
 	}
-	if (i_arr)
-		free(i_arr);
-	if (stack)
+}
+
+void	ft_free_stack(t_stack_node **stack)
+{
+	t_stack_node	*tmp;
+	t_stack_node	*curr;
+
+	if (!stack)
+		return ;
+	curr = *stack;
+	while (curr)
 	{
-		free(stack->stack);
-		free(stack);
+		tmp = curr->next;
+		free(curr);
+		curr = tmp;
 	}
-	ft_putstr_fd("Error\n", 2);
-	exit(2);
+	stack = NULL;
+}
+
+void	ft_error_free(t_stack_node **a, char **av)
+{
+	ft_free_stack(a);
+	ft_free_arr(av);
+	exit (2);
 }

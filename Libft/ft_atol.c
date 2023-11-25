@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 19:09:40 by dajimene          #+#    #+#             */
-/*   Updated: 2022/12/30 13:35:53 by dajimene         ###   ########.fr       */
+/*   Created: 2023/11/24 10:44:52 by dajimene          #+#    #+#             */
+/*   Updated: 2023/11/24 10:45:06 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+long	ft_atol(const char *str)
 {
-	while (*s)
-		write(fd, s++, 1);
-	write(fd, "\n", 1);
+	long	i;
+	int		sign;
+	long	val;
+
+	i = 0;
+	sign = 1;
+	val = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+		val = val * 10 + (str[i++] - 48);
+	return (val * sign);
 }

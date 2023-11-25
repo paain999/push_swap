@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:45:28 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/22 12:26:37 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:33:28 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,25 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	char	**splitted;
-	t_stack	*stack_b;
-	int i = 0;
+	t_stack_node	*a;
+	t_stack_node	*b;
 
-	splitted = NULL;
-	if (argc < 2)
-		return (0);
+	a = NULL;
+	b = NULL;
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
 	ft_check_params(argc, argv);
-	stack_a = ft_calloc(1, sizeof(t_stack));
-	if (!stack_a)
-		return (2);
-	splitted = ft_split_args(argc, argv, stack_a);
-	while (splitted[i])
-		printf("STRINGS: %s\n", splitted[i++]);
-	stack_a->stack = ft_parse_args(splitted, stack_a);
-	stack_b = ft_calloc(1, sizeof(t_stack));
-	if (!stack_b)
-		return (2);
-	stack_b->stack = ft_calloc(stack_a->size, sizeof(int));
-	stack_b->size = 0;
-	i = 0;
-	while (i < stack_a->size)
-		printf("NUMBERS: %d\n", stack_a->stack[i++]);
-	ft_free_stacks(stack_a, stack_b);
+	argv = ft_split_args(argc, argv);
+	init_stack(&a, argv);
+	if (!is_sorted(a))
+	{
+		if (stack_len(a) == 2)
+			sa(&a, 0);
+		else if (stack_len(a) == 3)
+			tiny_sort(&a);
+		else
+			push_swap(&a, &b);
+	}
+	ft_free_stack(&a);
 	return (0);
 }
