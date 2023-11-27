@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:57:46 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/25 18:43:27 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:38:36 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ void			sb(t_stack_node **b, int checker);
 void			ss(t_stack_node **a, t_stack_node **b, int checker);
 void			tiny_sort(t_stack_node **a);
 void			handle_five(t_stack_node **a, t_stack_node **b);
-void			finish_rotation(t_stack_node **stack, t_stack_node *top_node, char stack_name);
+void			finish_rotation(t_stack_node **stack,
+					t_stack_node *top_node, char stack_name);
 void			push_swap(t_stack_node **a, t_stack_node **b);
 void			pa(t_stack_node **a, t_stack_node **b, int checker);
 void			pb(t_stack_node **b, t_stack_node **a, int checker);
