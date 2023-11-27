@@ -1,7 +1,6 @@
 #VARIABLES:
 NAME = libft.a
 .SILENT:
-INCLUDE = ../include
 AR = ar rcs
 RM = rm -f
 CC = gcc

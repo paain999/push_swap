@@ -6,14 +6,14 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:57:46 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/27 10:38:36 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/27 22:31:17 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../include/libft.h"
+# include "libft.h"
 # include <unistd.h>
 # include <limits.h>
 
