@@ -7,7 +7,7 @@ CC = gcc
 CCFLAGS = -Wall -Wextra -Werror
 
 #SOURCES:
-SRC_FILES =	ft_memset ft_bzero ft_strlen ft_atoi ft_isdigit ft_isalpha\
+SRC_FILES =	ft_memset ft_bzero ft_strlen ft_atoi ft_atol ft_isdigit ft_isalpha\
 ft_isprint ft_isascii ft_isalnum ft_memchr ft_memcpy\
 ft_memcmp ft_memmove ft_strchr ft_strdup ft_strlcat ft_strlcpy\
 ft_strncmp ft_toupper ft_tolower ft_strnstr ft_strrchr ft_calloc ft_substr\

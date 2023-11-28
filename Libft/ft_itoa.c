@@ -6,11 +6,11 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:54:59 by dajimene          #+#    #+#             */
-/*   Updated: 2023/01/20 12:28:53 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/27 22:37:40 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 static	int	lenght(long int n)
 {

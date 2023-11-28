@@ -6,7 +6,7 @@
 #    By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 11:58:16 by dajimene          #+#    #+#              #
-#    Updated: 2023/11/27 22:28:41 by dajimene         ###   ########.fr        #
+#    Updated: 2023/11/28 22:58:53 by dajimene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,35 +17,40 @@ RM			= rm -f
 RF			= rm -rf
 AR			= ar rcs
 
-INCLUDE		= ./include/push_swap.h
-LIBFT		= ./Libft/libft.a
-LIBFT_DIR	= ./Libft/
+INCLUDE		= -I ./include/
+LIBFT		= Libft/libft.a
+LIBFT_DIR	= Libft/
 OBJ_DIR		= obj/
 SRC_DIR		= src/
 
-SRC_FILES	= ${shell find ./src -name "*.c"}
+SRC_FILES	= ${shell find src/ -name "*.c"}
 
 SRC		= $(SRC_FILES)
-OBJS	= $(patsubst %.c,%.o,$(SRC))
+OBJ	= $(subst src/, obj/, $(SRC))
+OBJS	= $(OBJ:.c=.o)
 
 .SILENT:
 
-all: $(NAME)
+all: $(OBJ_DIR) $(NAME)
 
-$(NAME): $(OBJS) include/push_swap.h
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@$(CC) $(CFLAGS) $(INCLUDE) -I$(LIBFT_DIR) -c $< -o $@
+	
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+	
+$(NAME): $(OBJS)
 	@echo "\033[33m --Compiling libft--"
 	@make -C $(LIBFT_DIR)
 	@echo "\033[33m --Compiling push_swap--"
-	@$(CC) $(CFLAGS) $(INCLUDE) $(LIBFT) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
 	@echo "\033[0;92m --libft compiled--"
 	@echo "\033[0;92m --push_swap compiled--"
 	@echo "\033[0;92mUsage: ./push_swap 43 6 35 2 0"
 
-%.o: $(SRC_DIR)%.c Libft/*.c
-	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-
 clean:
 	@make clean -C $(LIBFT_DIR)
+	@$(RF) $(OBJ_DIR)
 	@$(RM) $(OBJS)
 
 fclean: clean

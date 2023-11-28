@@ -6,11 +6,11 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 10:44:52 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/24 10:45:06 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/11/27 22:36:38 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 long	ft_atol(const char *str)
 {
