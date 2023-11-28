@@ -6,7 +6,7 @@
 #    By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 11:58:16 by dajimene          #+#    #+#              #
-#    Updated: 2023/11/28 22:58:53 by dajimene         ###   ########.fr        #
+#    Updated: 2023/11/28 23:41:43 by dajimene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,9 @@ $(OBJ_DIR):
 $(NAME): $(OBJS)
 	@echo "\033[33m --Compiling libft--"
 	@make -C $(LIBFT_DIR)
+	@echo "\033[0;92m --libft compiled--"
 	@echo "\033[33m --Compiling push_swap--"
 	@$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
-	@echo "\033[0;92m --libft compiled--"
 	@echo "\033[0;92m --push_swap compiled--"
 	@echo "\033[0;92mUsage: ./push_swap 43 6 35 2 0"
 
