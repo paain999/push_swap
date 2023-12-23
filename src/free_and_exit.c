@@ -6,11 +6,17 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:42:35 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/24 22:15:58 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/12/23 19:28:22 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	error_exit(char *str)
+{
+	ft_putstr_fd(str, 2);
+	exit(1);
+}
 
 void	ft_free_arr(char **arr)
 {
@@ -46,5 +52,5 @@ void	ft_error_free(t_stack_node **a, char **av)
 {
 	ft_free_stack(a);
 	ft_free_arr(av);
-	exit (2);
+	exit (1);
 }

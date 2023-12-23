@@ -6,7 +6,7 @@
 #    By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 11:58:16 by dajimene          #+#    #+#              #
-#    Updated: 2023/11/28 23:41:43 by dajimene         ###   ########.fr        #
+#    Updated: 2023/12/18 11:38:43 by dajimene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
 RF			= rm -rf
-AR			= ar rcs
 
 INCLUDE		= -I ./include/
 LIBFT		= Libft/libft.a

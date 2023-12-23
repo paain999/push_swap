@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:44:40 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/24 10:35:27 by dajimene         ###   ########.fr       */
+/*   Updated: 2023/12/23 19:26:49 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static void	ft_is_valid_arg(char *av)
 	while (av[i])
 	{
 		if (!ft_isdigit(av[i]) && !ft_sign(av[i]) && av[i] != ' ')
-			exit(2);
+			error_exit("Error");
 		else if (i != 0 && ft_sign(av[i]) && av[i - 1] != ' ')
-			exit(2);
+			error_exit("Error");
 		else if (ft_sign(av[i]) && !ft_isdigit(av[i + 1]))
-			exit(2);
+			error_exit("Error");
 		i++;
 	}
 }
