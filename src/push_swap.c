@@ -6,17 +6,12 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 18:06:36 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/25 19:36:50 by dajimene         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:21:36 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/*
- * Loop decays once
- * 		~cheapest_node tops is a
- * 		~relative target_node tops in b
-*/
 static void	rotate_both(t_stack_node **a,
 						t_stack_node **b,
 						t_stack_node *cheapest_node)
@@ -39,9 +34,6 @@ static void	reverse_rotate_both(t_stack_node **a,
 	set_current_position(*b);
 }
 
-/*
- * Conclude the rotation of the stacks 
-*/
 void	finish_rotation(t_stack_node **stack,
 							t_stack_node *top_node,
 							char stack_name)
@@ -61,16 +53,10 @@ void	finish_rotation(t_stack_node **stack,
 				rb(stack, 0);
 			else
 				rrb(stack, 0);
-		}	
+		}
 	}
 }
 
-/*
- * Move the node from 'b' to 'a'
- * with the metadata available in the node
- * 1)Make the target nodes emerge
- * 2)push in A
-*/
 static void	move_nodes(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest_node;
@@ -87,11 +73,6 @@ static void	move_nodes(t_stack_node **a, t_stack_node **b)
 	pa(a, b, 0);
 }
 
-/*
- * ~Push all nodes in B 
- * ~For every configuration choose the "cheapest_node"
- * ~Push everything back in A in order
-*/
 void	push_swap(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*smallest;

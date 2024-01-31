@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:57:46 by dajimene          #+#    #+#             */
-/*   Updated: 2023/12/23 19:26:04 by dajimene         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:02:04 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_stack_node
 //**** free and errors:
 void			ft_free_arr(char **arr);
 void			ft_free_stack(t_stack_node **stack);
-void			ft_error_free(t_stack_node **a, char **av);
+void			ft_error_free(t_stack_node **a, char **av, char *str);
 void			error_exit(char *str);
 
 //**** Checking and processing params:

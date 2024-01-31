@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 10:57:00 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/25 19:36:42 by dajimene         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:19:51 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,17 @@ static	int	ft_is_duplicate(t_stack_node *a, int nbr)
 	return (0);
 }
 
-t_stack_node	*ft_last_node(t_stack_node *head)
+t_stack_node	*ft_last_node(t_stack_node *last)
 {
-	if (head == NULL)
+	if (last == NULL)
 		return (NULL);
-	while (head->next)
-		head = head->next;
-	return (head);
+	while (last->next)
+		last = last->next;
+	return (last);
 }
 
+/* Add a node to the stack. If the stack is empty,
+the node is the head, else it's added to the end of the stack. */
 static	void	ft_add_node(t_stack_node **stack, int nbr)
 {
 	t_stack_node	*node;
@@ -59,6 +61,7 @@ static	void	ft_add_node(t_stack_node **stack, int nbr)
 	}
 }
 
+// Init the stack with the given params and check for duplicates and overflows.
 void	init_stack(t_stack_node **a, char **av)
 {
 	long	nbr;
@@ -69,9 +72,9 @@ void	init_stack(t_stack_node **a, char **av)
 	{
 		nbr = ft_atol(av[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
-			ft_error_free(a, av);
+			ft_error_free(a, av, "Error\n");
 		if (ft_is_duplicate(*a, nbr))
-			ft_error_free(a, av);
+			ft_error_free(a, av, "Error, duplicated number\n");
 		ft_add_node(a, (int)nbr);
 		i++;
 	}

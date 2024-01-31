@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 03:31:37 by dajimene          #+#    #+#             */
-/*   Updated: 2023/11/25 19:37:14 by dajimene         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:17:02 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static	char	**is_one_arg(char **av, int ac, char **splitted)
 		splitted = ft_split(av[1], ' ');
 		i = ft_arrlen(splitted);
 		if (i < 2)
-			ft_error_free(NULL, splitted);
+			ft_error_free(NULL, splitted, "Error\n");
 		return (splitted);
 	}
 	return (NULL);

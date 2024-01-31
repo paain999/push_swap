@@ -6,13 +6,13 @@
 #    By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 11:58:16 by dajimene          #+#    #+#              #
-#    Updated: 2023/12/18 11:38:43 by dajimene         ###   ########.fr        #
+#    Updated: 2024/01/29 15:00:00 by dajimene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address
 RM			= rm -f
 RF			= rm -rf
 

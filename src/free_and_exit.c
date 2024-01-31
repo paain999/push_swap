@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:42:35 by dajimene          #+#    #+#             */
-/*   Updated: 2023/12/23 19:28:22 by dajimene         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:01:42 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ void	ft_free_stack(t_stack_node **stack)
 	stack = NULL;
 }
 
-void	ft_error_free(t_stack_node **a, char **av)
+void	ft_error_free(t_stack_node **a, char **av, char *str)
 {
 	ft_free_stack(a);
 	ft_free_arr(av);
+	ft_putstr_fd(str, 2);
 	exit (1);
 }
