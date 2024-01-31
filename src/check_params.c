@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:44:40 by dajimene          #+#    #+#             */
-/*   Updated: 2023/12/23 19:26:49 by dajimene         ###   ########.fr       */
+/*   Updated: 2024/01/31 14:46:32 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ static int	ft_sign(int c)
 	return (c == '+' || c == '-');
 }
 
-static void	ft_is_valid_arg(char *av)
+static void	ft_is_valid_arg(char *av, int ac)
 {
 	int	i;
 
 	i = 0;
 	while (av[i])
 	{
-		if (!ft_isdigit(av[i]) && !ft_sign(av[i]) && av[i] != ' ')
-			error_exit("Error");
-		else if (i != 0 && ft_sign(av[i]) && av[i - 1] != ' ')
-			error_exit("Error");
+		if ((!ft_isdigit(av[i]) && !ft_sign(av[i]) && av[i] != ' ' && ac == 2) ||(!ft_isdigit(av[i]) && !ft_sign(av[i]) && ac > 2))
+			error_exit("Error\n");
+		else if (i != 0 && ft_sign(av[i]) && av[i - 1] != ' ' )
+			error_exit("Error\n");
 		else if (ft_sign(av[i]) && !ft_isdigit(av[i + 1]))
-			error_exit("Error");
+			error_exit("Error\n");
 		i++;
 	}
 }
@@ -56,15 +56,15 @@ void	ft_check_params(int ac, char **av)
 	while (i < ac)
 	{
 		if (av[i][0] == '\0')
-			exit(2);
+			error_exit("Error\n");
 		i++;
 	}
 	i = 1;
 	while (i < ac)
 	{
 		if (ft_empty_args(av[i]))
-			exit(2);
-		ft_is_valid_arg(av[i]);
+			error_exit("Error\n");
+		ft_is_valid_arg(av[i], ac);
 		i++;
 	}
 }

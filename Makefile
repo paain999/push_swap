@@ -6,18 +6,17 @@
 #    By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 11:58:16 by dajimene          #+#    #+#              #
-#    Updated: 2024/01/29 15:00:00 by dajimene         ###   ########.fr        #
+#    Updated: 2024/01/31 13:31:43 by dajimene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
 RF			= rm -rf
 
 INCLUDE		= -I ./include/
-LIBFT		= Libft/libft.a
 LIBFT_DIR	= Libft/
 OBJ_DIR		= obj/
 SRC_DIR		= src/

@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 10:57:00 by dajimene          #+#    #+#             */
-/*   Updated: 2024/01/29 15:19:51 by dajimene         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:38:02 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	init_stack(t_stack_node **a, char **av)
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			ft_error_free(a, av, "Error\n");
 		if (ft_is_duplicate(*a, nbr))
-			ft_error_free(a, av, "Error, duplicated number\n");
+			ft_error_free(a, av, "Error\n");
 		ft_add_node(a, (int)nbr);
 		i++;
 	}
