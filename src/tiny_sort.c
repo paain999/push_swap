@@ -6,7 +6,7 @@
 /*   By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:45:03 by dajimene          #+#    #+#             */
-/*   Updated: 2024/01/29 17:49:03 by dajimene         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:43:29 by dajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ static t_stack_node	*find_highest(t_stack_node *stack)
 }
 
 /*
- * When i have 3 nodes:
- * 	If the 1st is the biggest, ra (biggest to bottom)
- * 	If the 2nd is the biggest, rra (biggest to bottom)
- * 	Now i have the Biggest at the bottom
- * 		so i just chek 1st and 2nd
+  When i have 3 nodes:
+  	If the 1st is the biggest, ra (biggest to bottom)
+  	If the 2nd is the biggest, rra (biggest to bottom)
+  	Now i have the Biggest at the bottom
+  		so i just chek 1st and 2nd
 */
 void	tiny_sort(t_stack_node **a)
 {
@@ -52,9 +52,7 @@ void	tiny_sort(t_stack_node **a)
 		sa(a, 0);
 }
 
-/*
- * Handle input 5
-*/
+//Handle input 5
 void	handle_five(t_stack_node **a, t_stack_node **b)
 {
 	while (stack_len(*a) > 3)

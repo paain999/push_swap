@@ -6,13 +6,13 @@
 #    By: dajimene <dajimene@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 11:58:16 by dajimene          #+#    #+#              #
-#    Updated: 2024/01/31 13:31:43 by dajimene         ###   ########.fr        #
+#    Updated: 2024/02/01 17:22:52 by dajimene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 RM			= rm -f
 RF			= rm -rf
 
